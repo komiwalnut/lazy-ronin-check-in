@@ -13,7 +13,7 @@ function isValidEthereumPrivateKey(key: string): boolean {
 }
 
 async function main() {
-  logger.info('🔥 Daily CheckIn 🔥');
+  logger.info('🔥 Ronin Daily CheckIn 🔥');
   logger.info('------------------------');
 
   if (!keyFileExists()) {

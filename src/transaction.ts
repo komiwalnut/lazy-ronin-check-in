@@ -44,8 +44,8 @@ async function callRPC(rpcUrl: string, method: string, params: any[]): Promise<a
 }
 
 function encodeCheckInData(walletAddress: string): string {
-  const paddedAddress = walletAddress.toLowerCase().substring(2).padStart(64, '0');
-  return `${CHECKIN_FUNCTION_PREFIX}000000000000000000000000${paddedAddress}`;
+  const addressWithout0x = walletAddress.toLowerCase().substring(2);
+  return `${CHECKIN_FUNCTION_PREFIX}000000000000000000000000${addressWithout0x}`;
 }
 
 async function estimateGas(walletAddress: string, rpcUrl: string, callData: string): Promise<bigint> {
